@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+//import {MatInputModule, MatButtonModele, MatFormFieldModule, MatCardModule, MatIconModule}
+import MatInputModule from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'livraria';
+
 }
