@@ -1,8 +1,8 @@
-class Livro {
+export class Livro {
 
-    private titulo =  String;
-    private ISBN =  String;
-    private genero = String;
+    public titulo =  String;
+    public ISBN =  String;
+    public genero = String;
 
     constructor(titulo = String, ISBN = String, genero = String){
         this.titulo = titulo;

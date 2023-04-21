@@ -1,5 +1,18 @@
-<p>Raqueline Gomes U+261D | Geraldo Neto &#129299; </p>
-<mat-card>
+<p>{{titulo}} </p>
+<mat-form-field appearance="fill">
+
+  ISBN: <input [(ngModel)]="livro"> <br>
+  Gênero: <input [(ngModel)]="livro.genero"> <br>
+
+  <button (click)="inserirLivro()">Enviar</button>
+  <br>
+</mat-form-field>
+
+<ul>
+  <li *ngFor="let livro of estante">{{livro.titulo}}</li>
+</ul>
+
+<!-- <mat-card>
   <mat-card-title>Inserção de usuário</mat-card-title><br />
   <mat-form-field class="mat-form-principal" appearance="fill">
     <mat-label>Nome</mat-label>
@@ -49,4 +62,4 @@
     Blablabla blaBlablabla blaBlablabla blaBlablabla blaBlablabla blaBlablabla
     blaBlablabla bla
   </mat-card-content>
-</mat-card>
+</mat-card> -->

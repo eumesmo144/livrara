@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-//import {MatInputModule, MatButtonModele, MatFormFieldModule, MatCardModule, MatIconModule}
-import MatInputModule from '@angular/material';
+import { Livro } from "../model/livro"
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,25 @@ import MatInputModule from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'livraria';
+  titulo = 'livraria';
+  livro: Livro;
+  estante: Array<Livro>;
+
+  constructor(){
+    this.livro = new Livro();
+    this.estante = new Array<Livro>();
+  }
+  inserirLivro(): void {
+    this.estante.push(this.livro);
+    this.livro = new Livro();
+  }
+  removerLivro(livropRemover: Livro): void {
+    const indrm = this.estante.findIndex(livro => livro.ISBN === livropRemover.ISBN);
+    this.estante.splice(indrm, 1);
+  }
+  // editarLivro(livro: Livro): void {
+  //   this.livropEditar = livro;
+  // }
+
 
 }
