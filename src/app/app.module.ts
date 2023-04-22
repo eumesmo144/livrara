@@ -1,7 +1,6 @@
-import { FormsModule } from '@angular/forms'; //importação do FormsModule
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { from } from 'rxjs';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,8 +24,6 @@ import { from } from 'rxjs';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    NgForm
-
   ],
   providers: [],
   bootstrap: [AppComponent]

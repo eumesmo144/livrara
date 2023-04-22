@@ -1,65 +1,38 @@
-<p>{{titulo}} </p>
+<h1>{{title}}</h1>
 <mat-form-field appearance="fill">
-
-  ISBN: <input [(ngModel)]="livro"> <br>
-  Gênero: <input [(ngModel)]="livro.genero"> <br>
-
-  <button (click)="inserirLivro()">Enviar</button>
-  <br>
+  <mat-label>Titulo</mat-label>
+  <input matInput type="text" name="titulo" [(ngModel)]="livro.titulo"> 
 </mat-form-field>
+<mat-form-field>
+  <mat-label>Gênero literário</mat-label>  
+  <input matInput type="text" name="genero" [(ngModel)]="livro.genero"> 
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Código de livro (ISBN)</mat-label>  
+  <input matInput type="text" name="isbn" [(ngModel)]="livro.ISBN">
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Resumo literário</mat-label>  
+  <input matInput type="text" name="resumo" [(ngModel)]="livro.resumo">
+</mat-form-field><button mat-icon-button color="primary" (click)="inserirLivro()">
+    <mat-icon>add</mat-icon>
+</button><br>
 
-<ul>
-  <li *ngFor="let livro of estante">{{livro.titulo}}</li>
-</ul>
-
-<!-- <mat-card>
-  <mat-card-title>Inserção de usuário</mat-card-title><br />
-  <mat-form-field class="mat-form-principal" appearance="fill">
-    <mat-label>Nome</mat-label>
-    <mat-card-content>
-      <input matInput [(ngModel)]="usuario.nome" placeholder="digite o nome" />
-    </mat-card-content>
-  </mat-form-field>
-  <mat-form-field class="mat-form-principal" appearance="fill">
-    <mat-label>CPF</mat-label>
-    <mat-card-content>
-      <input matInput [(ngModel)]="usuario.cpf" placeholder="digite o cpf" />
-    </mat-card-content>
-  </mat-form-field>
-
-  <mat-form-field class="mat-form-principal" appearance="fill">
-    <mat-label>Idade</mat-label>
-    <mat-card-content>
-      <input
-        matInput
-        [(ngModel)]="usuario.idade"
-        placeholder="digite a idade"
-      />
-    </mat-card-content>
-  </mat-form-field>
-  <mat-card-actions style="text-align: center;">
-    <button
-      mat-raised-button
-      mat-icon-button
-      color="primary"
-      (click)="inserirUsuario()"
-    >
-      <mat-icon>add</mat-icon>
-    </button>
-    <br />
-  </mat-card-actions>
-</mat-card>
-<mat-card *ngFor="let usuario of usuarios" class="mat-card-simples">
+<mat-card *ngFor="let livro of estante" class="book-card">
+  <button mat-icon-button color="black" class="deletebutton" (click)="removerLivro()"><mat-icon>delete_outline</mat-icon>
+  </button>
   <mat-card-header>
-    <mat-card-title
-      ><mat-icon>person</mat-icon>{{ usuario.nome }}</mat-card-title
-    >
-    <mat-card-subtitle *ngIf="usuario.cpf"
-      >CPF: {{ usuario.cpf }} Idade: {{ usuario.idade }}</mat-card-subtitle
-    >
+    <mat-card-title style="font-size: 25px;">
+      <mat-icon style="margin-left: 0px;">book icon</mat-icon>
+      {{livro.titulo}}
+    </mat-card-title> 
+    <mat-card-subtitle>Gênero: {{livro.genero}}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    Blablabla blaBlablabla blaBlablabla blaBlablabla blaBlablabla blaBlablabla
-    blaBlablabla bla
-  </mat-card-content>
-</mat-card> -->
+  <mat-card-content *ngIf="livro.resumo" style="font-size: 20px;">Resumo: <br> {{livro.resumo}}</mat-card-content>
+  <mat-card-content>ISBN: {{livro.ISBN}}</mat-card-content>
+</mat-card>
+
+
+
+<span><p style="text-align: center;margin-top: -100px;">Geraldo Neto & Raqueline Gomes - PWEB 2023.1</p>
+</span>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Livro } from "../model/livro"
-import { NgForm } from '@angular/forms';
+import { Livro } from "./shared/model/livro"
 
 
 @Component({
@@ -9,25 +8,25 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  titulo = 'livraria';
+  title = 'Livrara';
   livro: Livro;
   estante: Array<Livro>;
+  livropRemover: Livro;
+
 
   constructor(){
     this.livro = new Livro();
     this.estante = new Array<Livro>();
+    this.livropRemover = new Livro();
   }
   inserirLivro(): void {
     this.estante.push(this.livro);
     this.livro = new Livro();
   }
-  removerLivro(livropRemover: Livro): void {
-    const indrm = this.estante.findIndex(livro => livro.ISBN === livropRemover.ISBN);
+  removerLivro(): void {
+    let indrm = this.estante.findIndex(livro => livro.ISBN === this.livropRemover.ISBN);
     this.estante.splice(indrm, 1);
   }
   // editarLivro(livro: Livro): void {
   //   this.livropEditar = livro;
-  // }
-
-
 }
